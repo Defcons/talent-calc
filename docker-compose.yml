@@ -1,0 +1,7 @@
+services:
+  talent-calc:
+    build: .
+    container_name: talent-calc
+    restart: unless-stopped
+    ports:
+      - "3100:3000"

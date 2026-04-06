@@ -1,26 +1,50 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Matching logs.defc0n.no color scheme */
+  --background: #0e1117;
+  --foreground: #e2e8f0;
+  --accent: #d4af37;
+  --accent-dim: rgba(212, 175, 55, 0.6);
+  --header-bg: #161b22;
+  --border-color: #2d3748;
+  --card-bg: #161b22;
+  --card-bg-hover: rgba(212, 175, 55, 0.05);
+  --tooltip-bg: #1c2230;
+  --tooltip-border: rgba(212, 175, 55, 0.3);
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --color-accent: var(--accent);
+  --color-accent-dim: var(--accent-dim);
+  --color-header-bg: var(--header-bg);
+  --color-border-color: var(--border-color);
+  --color-card-bg: var(--card-bg);
+  --color-card-bg-hover: var(--card-bg-hover);
+  --color-tooltip-bg: var(--tooltip-bg);
+  --color-tooltip-border: var(--tooltip-border);
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Segoe UI", system-ui, sans-serif;
+}
+
+/* Prevent text selection on talent icons during rapid clicking */
+.talent-icon {
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* Class picker card */
+.class-card {
+  border: 1px solid var(--border-color);
+  background: var(--card-bg);
+}
+.class-card:hover {
+  border-color: rgba(212, 175, 55, 0.4);
+  background: rgba(212, 175, 55, 0.05);
 }
